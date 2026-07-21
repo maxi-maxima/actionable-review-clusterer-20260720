@@ -31,6 +31,16 @@ Total comments: 1
 ...
 ```
 
+## Priorities and owner hints
+The clusterer now orders review buckets by delivery risk and includes suggested file owners:
+
+- `P0`: security findings
+- `P1`: likely bugs
+- `P2`: tests and performance
+- `P3`: docs, style, and follow-up work
+
+Markdown output includes a `Suggested owners by file` section. JSON output includes `bucket_order`, `owners_by_file`, and per-bucket `priority` metadata so another automation can turn review comments into an execution queue.
+
 ## Roadmap
 - Add richer keyword heuristics and semantic clustering.
 - Export GitHub review thread IDs and owner assignments.
